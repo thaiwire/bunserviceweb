@@ -1,8 +1,9 @@
 "use client";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+
+import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import config from "../config";
+import { useRouter } from "next/navigation";
 
 export function TopNav() {
   const [name, setName] = useState("");
@@ -16,21 +17,20 @@ export function TopNav() {
 
   const handleLogout = async () => {
     const button = await Swal.fire({
-      title: "Are you sure?",
-      text: "You will be logged out",
+      title: "Logout",
+      text: "Are you sure you want to logout?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonText: "Yes",
       cancelButtonText: "No",
     });
     if (button.isConfirmed) {
+      localStorage.removeItem(config.tokenKey);
       localStorage.removeItem("bun_service_name");
       localStorage.removeItem("bun_service_level");
-      localStorage.removeItem("bun_service_token");
       router.push("/");
     }
   };
-
   const handleProfile = () => {
     router.push("/backoffice/profile");
   };
@@ -44,19 +44,19 @@ export function TopNav() {
           </div>
           <div className="flex items-center">
             <span className="text-gray-200">{name}</span>
-            <span className="text-indigo-300 ml-5 font-bold">( {level} )</span>
+            <span className="text-indigo-200 ml-5 font-bold">{level}</span>
             <button
-              className="bg-indigo-500 text-white px-4 py-2 rounded-md ml-5 hover:bg-indigo-600"
+              className="bg-blue-500 text-white px-4 py-2 rounded-md ml-5 hover:bg-blue-600"
               onClick={handleProfile}
             >
-              <i className="fa fa-user mr-3"></i>
+              <i className="fas fa-cog"></i>
               Profile
             </button>
             <button
-              className="bg-red-500 text-white px-4 py-2 rounded-md ml-5 hover:bg-red-600"
+              className="bg-red-500 text-white px-4 py-2 rounded-md ml-5 hover:ng-red-600"
               onClick={handleLogout}
             >
-              <i className="fa fa-right-from-bracket mr-3"></i>
+              <i className="fas fa-sign-out-alt"></i>
               Logout
             </button>
           </div>

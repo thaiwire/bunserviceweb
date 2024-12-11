@@ -36,20 +36,10 @@ export default function Home() {
       );
 
       if (response.data.token !== undefined) {
-        Swal.fire({
-          icon: "success",
-          title: "success",
-          text: "Login Succes",
-        });
         localStorage.setItem(config.tokenKey, response.data.token);
-        localStorage.setItem(
-          "bun_service_name",
-          JSON.stringify(response.data.user.username)
-        );
-        localStorage.setItem(
-          "bun_service_level",
-          JSON.stringify(response.data.user.level)
-        );
+        localStorage.setItem("bun_service_name", response.data.user.username);
+        localStorage.setItem("bun_service_level", response.data.user.level);
+
         router.push("/backoffice/dashboard");
       } else {
         Swal.fire({

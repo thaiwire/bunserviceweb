@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -47,19 +48,60 @@ body {
   @apply flex items-center justify-center p-4 bg-gradient-to-tl from-indigo-600 to-pink-600 ml-4 mr-4 rounded-2xl mb-4;
 }
 .card {
-  @applybg-gray-800 p-8 rounded-2xl shadow-md h-full bg-opacity-50;
+  @apply bg-gray-800 p-8 rounded-2xl shadow-md h-full bg-opacity-50;
 }
 
-.card-input {
+.card input {
   @apply w-full mt-2;
 }
-.card-h1 {
+
+.card h1 {
   @apply text-2xl font-bold text-gray-200 mb-5;
 }
-.card-body {
+
+.card p {
   @apply text-gray-400;
 }
+
 .btn-primary {
-  @apply bg-indigo-600 text-white px-4 py-2 rounded-md mt-5
-  hover:bg-indigo-600;
+  @apply bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-600;
+}
+
+.table {
+  @apply w-full mt-3;
+}
+
+.table th {
+  @apply bg-gray-800 text-gray-200 p-4 text-left;
+}
+
+.table th:first-child {
+  @apply rounded-tl-lg;
+}
+
+.table th:last-child {
+  @apply rounded-tr-lg;
+}
+
+.table tbody td {
+  @apply p-3 bg-gray-700 text-gray-200 border-b border-gray-600;
+}
+
+.table tbody tr :last-child td:first-child {
+  @apply rounded-bl-2xl;
+}
+
+.table tbody tr :last-child td:last-child {
+  @apply rounded-br-2xl;
+}
+.table tbody tr :last-child td {
+  @apply border-b-0;
+}
+
+.btn-edit {
+  @apply bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 mr-5;
+}
+
+.btn-delete {
+  @apply bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600;
 }
