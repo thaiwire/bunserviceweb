@@ -14,22 +14,22 @@ export function Sidebar() {
     },
     {
       title: "บันทึกการซ่อม",
-      href: "/dashboard/repair-record",
+      href: "/backoffice/repair-record",
       icon: "fa-solid fa-screwdriver",
     },
     {
       title: "สถานะการซ่อม",
-      href: "/dashboard/repair-status",
+      href: "/backoffice/repair-status",
       icon: "fa-solid fa-gear",
     },
     {
       title: "สถิติการซ่อมของช่าง",
-      href: "/dashboard/mecthanic-report",
+      href: "/backoffice/mecthanic-report",
       icon: "fa-solid fa-right-from-bracket",
     },
     {
       title: "รายงานรายได้",
-      href: "/dashboard/income-report",
+      href: "/backoffice/income-report",
       icon: "fa-solid fa-money-bill",
     },
     {
@@ -39,7 +39,7 @@ export function Sidebar() {
     },
     {
       title: "ข้อมูลร้าน",
-      href: "/dashboard/company",
+      href: "/backoffice/company",
       icon: "fa-solid fa-shop",
     },
   ];

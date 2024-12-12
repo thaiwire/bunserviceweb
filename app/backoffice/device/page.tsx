@@ -55,7 +55,7 @@ export default function Page() {
       if (id === 0) {
         await axios.post(`${config.apiUrl}/api/device/create`, payload);
       } else {
-        await axios.put(config.apiUrl + `/api/device/update/` + id, payload);
+        await axios.put(`${config.apiUrl}/api/device/update/${id}`, payload);
       }
 
       setShowModal(false);
@@ -92,7 +92,7 @@ export default function Page() {
       const button = await config.confirmDialog();
 
       if (button.isConfirmed) {
-        await axios.delete(config.apiUrl + `/api/device/remove` + id);
+        await axios.delete(config.apiUrl + "/api/device/remove/" + id);
         fetchData();
       }
     } catch (error: any) {
